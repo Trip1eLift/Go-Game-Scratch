@@ -17,7 +17,16 @@ func newBasicEnemy(renderer *sdl.Renderer, position vector) *element {
 	sr := newSpriteRenderer(basicEnemy, renderer, "sprites/basic_enemy.bmp")
 	basicEnemy.addComponent(sr)
 
+	vtb := newVulnerableToBullets(basicEnemy)
+	basicEnemy.addComponent(vtb)
+
 	basicEnemy.active = true
+
+	col := circle{
+		center: basicEnemy.position,
+		radius: 38,
+	}
+	basicEnemy.collisions = append(basicEnemy.collisions, col)
 
 	return basicEnemy
 }

@@ -33,5 +33,12 @@ func (mover *bulletMover) onUpdate() error {
 		cont.active = false
 	}
 
+	cont.collisions[0].center = cont.position
+
+	return nil
+}
+
+func (mover *bulletMover) onCollision(other *element) error {
+	mover.container.active = false
 	return nil
 }
