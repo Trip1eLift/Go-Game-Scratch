@@ -42,6 +42,7 @@ func main() {
 	}
 	defer renderer.Destroy()
 
+	elements = append(elements, newBackground(renderer))
 	elements = append(elements, newPlayer(renderer))
 
 	for i := 0; i < 5; i++ {
@@ -55,6 +56,7 @@ func main() {
 	}
 
 	initBulletPool(renderer)
+	//initEnemyBulletPool(renderer)
 
 	for {
 		frameStartTime := time.Now()

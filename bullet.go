@@ -5,7 +5,6 @@ import (
 )
 
 const (
-	bulletSize  = 32
 	bulletSpeed = 10
 )
 
